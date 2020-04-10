@@ -1,6 +1,6 @@
 import { Modifier, EditorState, SelectionState, RichUtils, CharacterMetadata, AtomicBlockUtils, convertFromRaw } from 'draft-js'
 import { setBlockData, getSelectionEntity } from 'draftjs-utils'
-import { convertHTMLToRaw } from 'braft-convert'
+import { convertHTMLToRaw } from '@inner-desktop/braft-convert'
 import Immutable from 'immutable'
 
 const strictBlockTypes = ['atomic']
@@ -307,7 +307,7 @@ export const toggleSelectionLink = (editorState, href, target) => {
 
     nextEditorState = RichUtils.toggleLink(nextEditorState, selectionState, entityKey)
     nextEditorState = EditorState.forceSelection(nextEditorState, selectionState.merge({
-      anchorOffset: selectionState.getEndOffset(), 
+      anchorOffset: selectionState.getEndOffset(),
       focusOffset: selectionState.getEndOffset()
     }))
 
